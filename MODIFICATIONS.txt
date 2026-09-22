@@ -1,0 +1,27 @@
+SHADOW BOUND - ENEMY SPAWN/BACKGROUND FIX
+
+Modified files:
+- iMain.cpp
+- cave.hpp
+- config.hpp
+- bug.hpp
+- goblin.hpp
+
+Changes:
+1. Fixed cave/enemy encounter background disappearing.
+   The real Level1Background is now drawn during CAVE_STATE before enemies/UI.
+   drawCave() no longer paints full-screen solid rectangles over the background.
+
+2. Added random X-only enemy spawn positions.
+   After player.x reaches CAVE_RANDOM_SPAWN_TRIGGER_X (800), newly spawned bugs
+   and goblins select random positions from multiple X spawn points.
+
+3. Enemy Y position does not change.
+   Bugs keep CAVE_BUG_SPAWN_Y and goblins keep CAVE_GOBLIN_SPAWN_Y.
+
+4. Added minimum player/spawn separation where possible to reduce enemies
+   spawning directly on top of the player.
+
+5. Kept implementation Visual Studio 2013 compatible.
+   Uses classic arrays, rand(), existing sprintf_s/strcpy_s conventions, and
+   does not use modern C++ random/initializer features that require newer setups.
