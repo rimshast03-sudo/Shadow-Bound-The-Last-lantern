@@ -1,24 +1,4 @@
-// ============================================================
-// cave.hpp — Cave encounter manager
-//
-// Reached by walking to CAVE_ENTRY_X during PLAYING_STATE (see
-// iMain.cpp), which drops the player into CAVE_STATE at
-// (CAVE_LAND_X, CAVE_LAND_Y).
-//
-// Wave order (ported from "The Last Lantern" enemy demo, now
-// spawning enemies ONE AT A TIME instead of as a full wave --
-// see bug.hpp / goblin.hpp for the per-enemy spawn queues):
-//   1. Bugs      (CAVE_BUG_MAX total, one on screen at a time)
-//   2. Goblins   (CAVE_GOBLIN_MAX total, one on screen at a time)
-//   3. Grim Master boss, unlocked once the player pushes past
-//      CAVE_BOSS_UNLOCK_X
-//   -- boss falls -> iMain.cpp shows a "LEVEL 1 CLEARED!" pause
-//      (LEVEL1_CLEARED_STATE) over this same cave background --
-//   4. Flyers + Throwers (CAVE_FLYER_MAX + CAVE_THROWER_MAX, one at a
-//      time, spawned straight from FlyingCreature.hpp / LightningThrower.hpp)
-//      = Level 2, entered once the pause above ends. Same background as
-//      Level 1 the whole time -- it's the same cave, just the next wave.
-// ============================================================
+
 #ifndef CAVE_HPP
 #define CAVE_HPP
 #include "iGraphics.h"

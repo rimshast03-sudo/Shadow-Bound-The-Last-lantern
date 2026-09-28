@@ -18,6 +18,7 @@
 #include "tradernpc.hpp"
 #include "boss.hpp"
 #include "level3boss.hpp"
+#include "grimmaster.hpp"
 #include <time.h>
 #include <cstdlib>
 
@@ -38,6 +39,11 @@ struct BossDoor bossDoor;
 struct Boss boss;
 struct BossMinion bossMinions[MAX_BOSS_MINIONS];
 struct BossHazard bossHazards[MAX_BOSS_HAZARDS];
+struct PuzzleSwitch puzzleSwitches[MAX_PUZZLE_SWITCHES];
+struct PushBlock pushBlock;
+struct PuzzleGate puzzleGate;
+struct Grim grims[MAX_GRIMS];
+struct GrimFireball grimFireballs[MAX_GRIM_FIREBALLS];
 
 static void resetCaveCamera()
 {
@@ -92,6 +98,11 @@ void iDraw()
         if (gameState == LEVEL3_STATE) {
             renderTraderNPC(&traderNpc, &camera);
             renderBossDoor(&bossDoor, &camera);
+            renderPuzzleSwitches(puzzleSwitches, &camera);
+            renderPushBlock(&pushBlock, &camera);
+            renderPuzzleGate(&puzzleGate, &camera);
+            renderGrims(grims, &camera);
+            renderGrimFireballs(grimFireballs, &camera);
         }
 
         float sx = getScreenX(player.x, &camera);
@@ -366,6 +377,11 @@ int main()
     initLevel3BossHazards(bossHazards);
     initTraderNPC(&traderNpc);
     initBossDoor(&bossDoor);
+    initPuzzleSwitches(puzzleSwitches);
+    initPushBlock(&pushBlock);
+    initPuzzleGate(&puzzleGate);
+    initGrims(grims);
+    initGrimFireballs(grimFireballs);
 
     iSetTimer(15, animate);
     iStart();

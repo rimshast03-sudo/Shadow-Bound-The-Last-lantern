@@ -13,12 +13,19 @@
 #include "tradernpc.hpp"
 #include "boss.hpp"
 #include "level3boss.hpp"
+#include "puzzle.hpp"
+#include "grimmaster.hpp"
 
 extern struct TraderNPC traderNpc;
 extern struct BossDoor bossDoor;
 extern struct Boss boss;
 extern struct BossMinion bossMinions[MAX_BOSS_MINIONS];
 extern struct BossHazard bossHazards[MAX_BOSS_HAZARDS];
+extern struct PuzzleSwitch puzzleSwitches[MAX_PUZZLE_SWITCHES];
+extern struct PushBlock pushBlock;
+extern struct PuzzleGate puzzleGate;
+extern struct Grim grims[MAX_GRIMS];
+extern struct GrimFireball grimFireballs[MAX_GRIM_FIREBALLS];
 
 void setupLevel2Tiles(struct Midground *mg) {
   mg->tileCount = 0;
@@ -90,6 +97,11 @@ inline void startLevel3(Player &player, struct Creature creatures[],
   initLevel3Boss(&boss);
   initLevel3BossMinions(bossMinions);
   initLevel3BossHazards(bossHazards);
+  initPuzzleSwitches(puzzleSwitches);
+  initPushBlock(&pushBlock);
+  initPuzzleGate(&puzzleGate);
+  initGrims(grims);
+  initGrimFireballs(grimFireballs);
 
   stopBG2Music();
   playBG2Music();
@@ -209,6 +221,22 @@ inline void updateGame(Player &player, struct Creature creatures[],
       player.keyUsed = 1;
     }
     updateBossDoor(&bossDoor, &player);
+
+    updatePuzzleSwitches(puzzleSwitches, &player, &pushBlock);
+    updatePuzzleGate(&puzzleGate, puzzleSwitches);
+    updatePushBlock(&pushBlock, &player, &puzzleGate);
+
+    updateGrims(grims, grimFireballs, &player, arrows, *gameState);
+    updateGrimFireballs(grimFireballs, &player);
+
+    // The gate is mid-level (unlike the boss door, which just gates the
+    // level's end), so it has to actually block the player's path while
+    // locked rather than merely gate progression at a boundary.
+    if (!puzzleGate.opened &&
+        player.x + PLAYER_WIDTH > PUZZLE_GATE_X &&
+        player.x < PUZZLE_GATE_X + PUZZLE_GATE_W) {
+      player.x = PUZZLE_GATE_X - PLAYER_WIDTH;
+    }
   }
 
   updateCreatures(creatures, &player, *gameState, arrows);

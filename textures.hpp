@@ -124,6 +124,13 @@ unsigned int keyIconTex = 0;
 unsigned int doorLockedTex[DOOR_LOCKED_FRAMES];
 unsigned int doorOpenTex[DOOR_OPEN_FRAMES];
 
+// Puzzle textures ("Twin Switch Gate")
+unsigned int switchUnpressedTex = 0;
+unsigned int switchPressedTex = 0;
+unsigned int pushBlockTex = 0;
+unsigned int puzzleGateLockedTex[PUZZLE_GATE_LOCKED_FRAMES];
+unsigned int puzzleGateOpenTex[PUZZLE_GATE_OPEN_FRAMES];
+
 // Quit game menu textures
 unsigned int quitBgTex = 0;
 unsigned int quitYesTex = 0;
@@ -362,6 +369,26 @@ void loadDoorTextures() {
   loadSet(doorOpenTex, DOOR_OPEN_FRAMES, "Assets/Level 3/door/open/%d.png");
 }
 
+void loadPuzzleTextures() {
+  // Shipped assets live flat under Assets/Puzzle/, 0-indexed
+  // (gate_locked_0.png .. gate_locked_3.png, gate_open_0.png ..
+  // gate_open_7.png) -- unlike loadSet's dir/%d.png, 1-indexed
+  // convention used for the boss door, so these are loaded directly.
+  switchUnpressedTex = iLoadImage("Assets/Puzzle/switch_unpressed.png");
+  switchPressedTex = iLoadImage("Assets/Puzzle/switch_pressed.png");
+  pushBlockTex = iLoadImage("Assets/Puzzle/push_block.png");
+
+  char name[128];
+  for (int i = 0; i < PUZZLE_GATE_LOCKED_FRAMES; i++) {
+    sprintf_s(name, sizeof(name), "Assets/Puzzle/gate_locked_%d.png", i);
+    puzzleGateLockedTex[i] = iLoadImage(name);
+  }
+  for (int i = 0; i < PUZZLE_GATE_OPEN_FRAMES; i++) {
+    sprintf_s(name, sizeof(name), "Assets/Puzzle/gate_open_%d.png", i);
+    puzzleGateOpenTex[i] = iLoadImage(name);
+  }
+}
+
 unsigned int grimIdle[GRIM_IDLE_FRAMES];
 unsigned int grimTurnL[GRIM_TURN_L_FRAMES];
 unsigned int grimTurnR[GRIM_TURN_R_FRAMES];
@@ -435,7 +462,9 @@ void loadImages() {
   loadTraderNPCTextures();
   loadTradeItemTextures();
   loadDoorTextures();
+  loadPuzzleTextures();
   loadBossEntityTextures();
+  loadGrimMasterTextures();
 }
 
 #endif

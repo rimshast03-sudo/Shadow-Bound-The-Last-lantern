@@ -177,6 +177,74 @@ struct BossDoor {
   int x, y, frame, animTimer, locked, opening, opened;
 };
 
+// ===== "Twin Switch Gate" puzzle (Level 3) =====
+struct PuzzleSwitch {
+  int x, y;
+  int pressed;
+  int frame;
+  int animTimer;
+};
+
+struct PushBlock {
+  int x, y;
+  int vy;
+  int grounded;
+  int startX;
+};
+
+struct PuzzleGate {
+  int x, y;
+  int frame;
+  int animTimer;
+  int locked;
+  int opening;
+  int opened;
+};
+
+// Level 3 "Grim" enemy (Assets/Level 3/grim master) -- a roaming caster
+// that dashes in for melee range, throws fireballs at range, and
+// teleports around the arena. See grimmaster.hpp.
+enum GrimState {
+  GRIM_STATE_INACTIVE,
+  GRIM_STATE_IDLE,
+  GRIM_STATE_TURN,
+  GRIM_STATE_DASH_ANTIC,
+  GRIM_STATE_DASHING,
+  GRIM_STATE_THROW_ANTIC,
+  GRIM_STATE_THROWING,
+  GRIM_STATE_TELEPORT_OUT,
+  GRIM_STATE_TELEPORT_IN,
+  GRIM_STATE_DYING
+};
+
+struct Grim {
+  int x, y;
+  int frame;
+  int active;
+  enum GrimState state;
+  int facingRight;
+  int subStateTimer;
+  int animationTimer;
+  int maxHealth;
+  int currentHealth;
+  int invincibilityTimer;
+  int damageAnimTimer;
+  int damageFrame;
+  int attackCooldown;
+  int contactHitCooldown;
+  int teleportTargetX;
+};
+
+struct GrimFireball {
+  int x, y;
+  int vx, vy;
+  int active;
+  int exploding;
+  int frame;
+  int animTimer;
+  int facingRight;
+};
+
 struct Arrow {
 	int x, y;
 	bool active;

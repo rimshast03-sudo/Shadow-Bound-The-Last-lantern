@@ -66,22 +66,25 @@
     <ClInclude Include="inventory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="level3boss.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tradernpc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="textures.hpp">
+    <ClInclude Include="player.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="grimmaster.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="structs.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="player.hpp">
+    <ClInclude Include="textures.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="puzzle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

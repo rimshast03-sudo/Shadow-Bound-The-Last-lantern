@@ -52,8 +52,8 @@ void initLevel3Boss(struct Boss *boss) {
   boss->facingRight = 0; 
   boss->state = BOSS_IDLE_STATE;
   boss->stateTimer = 0;
-  boss->currentHealth = BOSS_MAX_HEALTH;
-  boss->maxHealth = BOSS_MAX_HEALTH;
+  boss->currentHealth = BOSS_MAX_HEALTH*4;
+  boss->maxHealth = BOSS_MAX_HEALTH*4;
   boss->hasUsedTrap = 0;
   boss->teleportTargetX = BOSS_SPAWN_X;
   boss->phase = 1;

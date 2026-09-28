@@ -427,6 +427,37 @@
 #define DOOR_H 180
 #define DOOR_ANIM_SPEED 6
 
+// "Twin Switch Gate" puzzle — sits between the trader (x=2900) and the
+// boss door (x=4850).
+#define MAX_PUZZLE_SWITCHES 2
+
+#define SWITCH_W 60
+#define SWITCH_H 20
+
+#define PUSH_BLOCK_W 80
+#define PUSH_BLOCK_H 80
+#define PUSH_BLOCK_SPEED 3
+
+#define PUZZLE_GATE_LOCKED_FRAMES 4
+#define PUZZLE_GATE_OPEN_FRAMES 8
+#define PUZZLE_GATE_W 120
+#define PUZZLE_GATE_H 180
+#define PUZZLE_GATE_ANIM_SPEED 6
+
+#define SWITCH_1_X 3200
+#define SWITCH_1_Y LEVEL3_GROUND_Y
+#define SWITCH_2_X 3450
+#define SWITCH_2_Y LEVEL3_GROUND_Y
+
+#define PUSH_BLOCK_START_X 3300
+
+#define PUZZLE_GATE_X 3600
+#define PUZZLE_GATE_Y (LEVEL3_GROUND_Y + 50)
+
+// Keeps the block from being shoved out of the puzzle room
+#define PUZZLE_ROOM_MIN_X 3150
+#define PUZZLE_ROOM_MAX_X 3550
+
 #define BOSS_MAX_HEALTH 400
 #define BOSS_NORMAL_HIT_DAMAGE 5    
 #define BOSS_SLASHWAVE_HIT_DAMAGE 7  

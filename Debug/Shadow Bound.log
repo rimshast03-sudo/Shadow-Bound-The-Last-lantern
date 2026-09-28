@@ -1,13 +1,15 @@
-﻿Build started 9/22/2026 8:57:18 PM.
-     1>Project "D:\Final level\Shadow_Bound_FinalTouch_ArrowAttack_1\Shadow bound final touch\Shadow Bound.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 9/23/2026 2:39:06 PM.
+     1>Project "C:\Users\samee\OneDrive\Documents\Shadow_Bound_with_puzzle 2 (2)\Shadow_Bound_with_puzzle 2\Shadow bound final touch\Shadow Bound.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt iMain.cpp
          iMain.cpp
+     1>c:\users\samee\onedrive\documents\shadow_bound_with_puzzle 2 (2)\shadow_bound_with_puzzle 2\shadow bound final touch\grimmaster.hpp(134): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Final level\Shadow_Bound_FinalTouch_ArrowAttack_1\Shadow bound final touch\Debug\Shadow Bound.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Final level\Shadow_Bound_FinalTouch_ArrowAttack_1\Shadow bound final touch\\" winmm.lib opengl32.lib glu32.lib glut32.lib glaux.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Final level\Shadow_Bound_FinalTouch_ArrowAttack_1\Shadow bound final touch\Debug\Shadow Bound.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Final level\Shadow_Bound_FinalTouch_ArrowAttack_1\Shadow bound final touch\Debug\Shadow Bound.lib" /MACHINE:X86 Debug\iMain.obj
-         Shadow Bound.vcxproj -> D:\Final level\Shadow_Bound_FinalTouch_ArrowAttack_1\Shadow bound final touch\Debug\Shadow Bound.exe
-     1>Done Building Project "D:\Final level\Shadow_Bound_FinalTouch_ArrowAttack_1\Shadow bound final touch\Shadow Bound.vcxproj" (Rebuild target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\samee\OneDrive\Documents\Shadow_Bound_with_puzzle 2 (2)\Shadow_Bound_with_puzzle 2\Shadow bound final touch\Debug\Shadow Bound.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\samee\OneDrive\Documents\Shadow_Bound_with_puzzle 2 (2)\Shadow_Bound_with_puzzle 2\Shadow bound final touch\\" winmm.lib opengl32.lib glu32.lib glut32.lib glaux.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\samee\OneDrive\Documents\Shadow_Bound_with_puzzle 2 (2)\Shadow_Bound_with_puzzle 2\Shadow bound final touch\Debug\Shadow Bound.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\samee\OneDrive\Documents\Shadow_Bound_with_puzzle 2 (2)\Shadow_Bound_with_puzzle 2\Shadow bound final touch\Debug\Shadow Bound.lib" /MACHINE:X86 Debug\iMain.obj
+         LINK : C:\Users\samee\OneDrive\Documents\Shadow_Bound_with_puzzle 2 (2)\Shadow_Bound_with_puzzle 2\Shadow bound final touch\Debug\Shadow Bound.exe not found or not built by the last incremental link; performing full link
+         Shadow Bound.vcxproj -> C:\Users\samee\OneDrive\Documents\Shadow_Bound_with_puzzle 2 (2)\Shadow_Bound_with_puzzle 2\Shadow bound final touch\Debug\Shadow Bound.exe
+     1>Done Building Project "C:\Users\samee\OneDrive\Documents\Shadow_Bound_with_puzzle 2 (2)\Shadow_Bound_with_puzzle 2\Shadow bound final touch\Shadow Bound.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.15
+Time Elapsed 00:00:08.99

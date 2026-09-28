@@ -68,11 +68,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="game.hpp" />
+    <ClInclude Include="grimmaster.hpp" />
     <ClInclude Include="inventory.hpp" />
     <ClInclude Include="level3boss.hpp" />
     <ClInclude Include="midground.hpp" />
     <ClInclude Include="player.hpp" />
+    <ClInclude Include="puzzle.hpp" />
     <ClInclude Include="sounds.hpp" />
     <ClInclude Include="staminabar.hpp" />
     <ClInclude Include="bug.hpp" />
